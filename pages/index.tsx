@@ -1,6 +1,9 @@
+// NextJS
 import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
+
+import Piano from "../app/components/Piano";
 
 const Home: NextPage = () => {
   return (
@@ -15,6 +18,8 @@ const Home: NextPage = () => {
         <h1>
           Welcome to the <a href="https://nextjs.org">Piano Player</a>
         </h1>
+
+        <Piano />
       </main>
 
       <footer></footer>
