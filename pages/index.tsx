@@ -15,11 +15,11 @@ const Home: NextPage = () => {
       </Head>
 
       <main>
-        <h1>
-          Welcome to the <a href="https://nextjs.org">Piano Player</a>
-        </h1>
+        <div className="h-screen flex flex-col justify-center items-center">
+          <h1 className="p-10">Welcome to the Piano Player.</h1>
 
-        <Piano />
+          <Piano />
+        </div>
       </main>
 
       <footer></footer>

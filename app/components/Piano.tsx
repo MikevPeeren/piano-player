@@ -1,5 +1,11 @@
 // React
-import React, { ReactElement, FC, useState, useEffect } from "react";
+import React, {
+  ReactElement,
+  FC,
+  useState,
+  useCallback,
+  useEffect,
+} from "react";
 
 // Black Button Audio
 import WAudio from "../audio/W.wav";
@@ -23,60 +29,74 @@ import LAudio from "../audio/L.wav";
 import SemicolonAudio from "../audio/;.wav";
 
 const Piano: FC = (): ReactElement => {
+  const music = {
+    W: WAudio,
+    E: EAudio,
+    T: TAudio,
+    Y: YAudio,
+    U: UAudio,
+    O: OAudio,
+    P: PAudio,
+    A: AAudio,
+    S: SAudio,
+    D: DAudio,
+    F: FAudio,
+    G: GAudio,
+    H: HAudio,
+    J: JAudio,
+    K: KAudio,
+    L: LAudio,
+    ";": SemicolonAudio,
+  };
+
   useEffect(() => {
     window.addEventListener("keydown", handleKeyDown);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const handleKeyDown = (e) => {
-    console.log(e.key);
-    let audio = document.getElementById(e.key.toUpperCase());
-    audio.play();
+    const key = e.key.toUpperCase();
+    const isValidKey = checkValidKey(key);
+
+    // Play the audio behind the Key
+    if (isValidKey) {
+      let audio = document.getElementById(key);
+      audio.play();
+    }
   };
 
-  const handleKeyUp = (e) => {
-    if (sampler) sampler.triggerRelease();
+  const checkValidKey = (key: string) => {
+    return Object.keys(music).includes(key);
   };
 
   return (
     <div id="piano">
       <div id="blackbuttons">
         <button>W</button>
-        <audio id="W" src={WAudio}></audio>
         <button>E</button>
-        <audio id="E" src={EAudio}></audio>
         <button>T</button>
-        <audio id="T" src={TAudio}></audio>
         <button>Y</button>
-        <audio id="Y" src={YAudio}></audio>
         <button>U</button>
-        <audio id="U" src={UAudio}></audio>
         <button>O</button>
-        <audio id="O" src={OAudio}></audio>
         <button>P</button>
-        <audio id="P" src={PAudio}></audio>
       </div>
       <div id="whitebuttons">
         <button>A</button>
-        <audio id="A" src={AAudio}></audio>
         <button>S</button>
-        <audio id="S" src={SAudio}></audio>
         <button>D</button>
-        <audio id="D" src={DAudio}></audio>
         <button>F</button>
-        <audio id="F" src={FAudio}></audio>
         <button>G</button>
-        <audio id="G" src={GAudio}></audio>
         <button>H</button>
-        <audio id="H" src={HAudio}></audio>
         <button>J</button>
-        <audio id="J" src={JAudio}></audio>
         <button>K</button>
-        <audio id="K" src={KAudio}></audio>
         <button>L</button>
-        <audio id="L" src={LAudio}></audio>
-        <button onClick={handleKeyDown}>;</button>
-        <audio id=";" src={SemicolonAudio}></audio>
+        <button>;</button>
       </div>
+
+      {music &&
+        Object.entries(music).map(([key, value], i) => (
+          <audio key={i} id={key} src={value} />
+        ))}
     </div>
   );
 };
