@@ -5,6 +5,7 @@ import type { AppProps } from "next/app";
 import React, { ReactElement } from "react";
 
 // Styles
+import "tailwindcss/tailwind.css";
 import "../styles/globals.css";
 
 export default function MyApp({
