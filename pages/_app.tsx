@@ -6,7 +6,7 @@ import React, { ReactElement } from "react";
 
 // Styles
 import "tailwindcss/tailwind.css";
-import "../styles/globals.css";
+import "../styles/globals.scss";
 
 export default function MyApp({
   Component,
