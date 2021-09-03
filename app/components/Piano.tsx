@@ -83,7 +83,7 @@ const Piano: FC = (): ReactElement => {
         <div id="buttons" className="relative">
           <button
             type="button"
-            className="bg-white border-2 border-black rounded-xl w-24 md:w-24 h-1/4 md:h-3/4"
+            className="bg-white border-2 border-black rounded-xl w-12 md:w-24 h-1/4 md:h-3/4"
           >
             A
           </button>
