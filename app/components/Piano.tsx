@@ -63,6 +63,12 @@ const Piano: FC = (): ReactElement => {
     // Play the audio behind the Key
     if (isValidKey) {
       let audio = document.getElementById(key);
+
+      // Stopping current Audio if it's the same
+      if (audio?.id === key) {
+        audio.pause();
+        audio.currentTime = 0;
+      }
       audio.play();
     }
   };
