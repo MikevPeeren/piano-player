@@ -11,12 +11,14 @@ const Home: NextPage = () => {
       <Head>
         <title>Piano Player</title>
         <meta name="description" content="Play a mighty fine tune" />
-        {/* <link rel="icon" href="/favicon.ico" /> */}
       </Head>
 
       <main>
         <div className="h-screen flex flex-col justify-center items-center">
-          <h1 className="p-10">Welcome to the Piano Player.</h1>
+          <div className="p-10 flex flex-col justify-center items-center">
+            <h1>Welcome to the Piano Player.</h1>
+            <h2>Use your keyboard.</h2>
+          </div>
 
           <Piano />
         </div>

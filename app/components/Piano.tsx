@@ -79,7 +79,7 @@ const Piano: FC = (): ReactElement => {
 
   return (
     <div id="piano" className="w-5/6 md:w-full h-full md:mx-4">
-      <div className="flex justify-center h-3/4">
+      <div className="flex justify-center h-4/6">
         <div id="buttons" className="relative">
           <button
             type="button"
