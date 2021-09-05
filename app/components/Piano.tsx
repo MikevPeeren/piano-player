@@ -78,114 +78,80 @@ const Piano: FC = (): ReactElement => {
   };
 
   return (
-    <div id="piano" className="w-5/6 md:w-full h-full md:mx-4">
-      <div className="flex justify-center h-4/6">
-        <div id="buttons" className="relative">
-          <button
-            type="button"
-            className="bg-white border-2 border-black rounded-xl w-12 md:w-24 h-1/4 md:h-3/4"
-          >
-            A
-          </button>
-          <button
-            type="button"
-            className={`${styles.blackButton_firstKey} bg-black text-white absolute z-10 rounded-xl w-8 md:w-14 h-1/4 md:h-2/4`}
-          >
-            W
-          </button>
-          <button
-            type="button"
-            className="bg-white border-2 border-black rounded-xl w-12 md:w-24 h-1/4 md:h-3/4"
-          >
-            S
-          </button>
+    <div id="piano" className="block relative w-full h-80 max-w-4xl">
+      <button type="button" className={`${styles.pianoKey}`}>
+        A
+      </button>
+      <button
+        type="button"
+        className={`${styles.blackButton_firstKey} ${styles.pianoKey} ${styles.pianoKey__black}`}
+      >
+        W
+      </button>
+      <button type="button" className={`${styles.pianoKey}`}>
+        S
+      </button>
 
-          <button
-            type="button"
-            className={`${styles.blackButton_secondKey} bg-black text-white absolute z-10 rounded-xl w-8 md:w-14 h-1/4 md:h-2/4`}
-          >
-            E
-          </button>
-          <button
-            type="button"
-            className="bg-white border-2 border-black rounded-xl w-12 md:w-24 h-1/4 md:h-3/4"
-          >
-            D
-          </button>
-          <button
-            type="button"
-            className="bg-white border-2 border-black rounded-xl w-12 md:w-24 h-1/4 md:h-3/4"
-          >
-            F
-          </button>
-          <button
-            type="button"
-            className={`${styles.blackButton_thirdKey} bg-black text-white absolute z-10 rounded-xl w-8 md:w-14 h-1/4 md:h-2/4`}
-          >
-            T
-          </button>
-          <button
-            type="button"
-            className="bg-white border-2 border-black rounded-xl w-12 md:w-24 h-1/4 md:h-3/4"
-          >
-            G
-          </button>
-          <button
-            type="button"
-            className={`${styles.blackButton_fourthKey} bg-black text-white absolute z-10 rounded-xl w-8 md:w-14 h-1/4 md:h-2/4`}
-          >
-            Y
-          </button>
-          <button
-            type="button"
-            className="bg-white border-2 border-black rounded-xl w-12 md:w-24 h-1/4 md:h-3/4"
-          >
-            H
-          </button>
-          <button
-            type="button"
-            className={`${styles.blackButton_fifthKey} bg-black text-white absolute z-10 rounded-xl w-8 md:w-14 h-1/4 md:h-2/4`}
-          >
-            U
-          </button>
-          <button
-            type="button"
-            className="bg-white border-2 border-black rounded-xl w-12 md:w-24 h-1/4 md:h-3/4"
-          >
-            J
-          </button>
-          <button
-            type="button"
-            className="bg-white border-2 border-black rounded-xl w-12 md:w-24 h-1/4 md:h-3/4"
-          >
-            K
-          </button>
-          <button
-            type="button"
-            className={`${styles.blackButton_sixthKey} bg-black text-white absolute z-10 rounded-xl w-8 md:w-14 h-1/4 md:h-2/4`}
-          >
-            O
-          </button>
-          <button
-            type="button"
-            className="bg-white border-2 border-black rounded-xl w-12 md:w-24 h-1/4 md:h-3/4"
-          >
-            L
-          </button>
-          <button
-            type="button"
-            className={`${styles.blackButton_seventhKey} bg-black text-white absolute z-10 rounded-xl w-8 md:w-14 h-1/4 md:h-2/4`}
-          >
-            p
-          </button>
-          <button
-            type="button"
-            className="bg-white border-2 border-black rounded-xl w-12 md:w-24 h-1/4 md:h-3/4"
-          >
-            ;
-          </button>
-        </div>
-      </div>
+      <button
+        type="button"
+        className={`${styles.blackButton_secondKey} ${styles.pianoKey} ${styles.pianoKey__black}`}
+      >
+        E
+      </button>
+      <button type="button" className={`${styles.pianoKey}`}>
+        D
+      </button>
+      <button type="button" className={`${styles.pianoKey}`}>
+        F
+      </button>
+      <button
+        type="button"
+        className={`${styles.blackButton_thirdKey} ${styles.pianoKey} ${styles.pianoKey__black}`}
+      >
+        T
+      </button>
+      <button type="button" className={`${styles.pianoKey}`}>
+        G
+      </button>
+      <button
+        type="button"
+        className={`${styles.blackButton_fourthKey} ${styles.pianoKey} ${styles.pianoKey__black}`}
+      >
+        Y
+      </button>
+      <button type="button" className={`${styles.pianoKey}`}>
+        H
+      </button>
+      <button
+        type="button"
+        className={`${styles.blackButton_fifthKey} ${styles.pianoKey} ${styles.pianoKey__black}`}
+      >
+        U
+      </button>
+      <button type="button" className={`${styles.pianoKey}`}>
+        J
+      </button>
+      <button type="button" className={`${styles.pianoKey}`}>
+        K
+      </button>
+      <button
+        type="button"
+        className={`${styles.blackButton_sixthKey} ${styles.pianoKey} ${styles.pianoKey__black}`}
+      >
+        O
+      </button>
+      <button type="button" className={`${styles.pianoKey}`}>
+        L
+      </button>
+      <button
+        type="button"
+        className={`${styles.blackButton_seventhKey} ${styles.pianoKey} ${styles.pianoKey__black}`}
+      >
+        p
+      </button>
+      <button type="button" className={`${styles.pianoKey}`}>
+        ;
+      </button>
       {music &&
         Object.entries(music).map(([key, value], i) => (
           <audio key={i} id={key} src={value} />

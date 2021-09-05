@@ -1,3 +1,16 @@
+.pianoKey {
+  float: left;
+  width: 10%;
+  z-index: 999;
+  @apply bg-white border-2 border-black rounded-xl h-full;
+
+  &__black {
+    width: 6%;
+    z-index: 1000;
+    @apply bg-black text-white absolute z-10 rounded-xl h-1/4 md:h-2/4;
+  }
+}
+
 .blackButton {
   &_firstKey {
     left: 7%;
