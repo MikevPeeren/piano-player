@@ -56,7 +56,7 @@ const Piano: FC = (): ReactElement => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const handleKeyDown = (e) => {
+  const handleKeyDown = (e: KeyboardEvent) => {
     const key = e.key.toUpperCase();
     const isValidKey = checkValidKey(key);
 
@@ -66,10 +66,10 @@ const Piano: FC = (): ReactElement => {
 
       // Stopping current Audio if it's the same
       if (audio?.id === key) {
-        audio.pause();
-        audio.currentTime = 0;
+        (audio as HTMLAudioElement).pause();
+        (audio as HTMLAudioElement).currentTime = 0;
       }
-      audio.play();
+      (audio as HTMLAudioElement).play();
     }
   };
 
